@@ -1,9 +1,23 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
 
-void printArray() {
-    for(int i = 0; i < 5; i++) {
-        printf("%d ", i);
+int main() {
+    int n, first = 0, second = 1, next;
+
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+
+    printf("Fibonacci Series: ");
+
+    for (int i = 0; i < n; i++) {
+        if (i <= 1) {
+            next = i;
+        } else {
+            next = first + second;
+            first = second;
+            second = next;
+        }
+        printf("%d ", next);
     }
-    printf("\n");
+
+    return 0;
 }
